@@ -1,17 +1,17 @@
-#include "monty.h"
+#include "main.h"
 /**
- * f_pint - prints the top
+ * fq_pint - prints the top
  * @head: stack head
- * @line: line_number
- * Return: nothing
- */
-void f_pint(stack_t **head, unsigned int line)
+ * @count: line_number
+ * Return: no return
+*/
+void fq_pint(stack_t **head, unsigned int count)
 {
 	if (*head == NULL)
 	{
-		fprintf(stderr, "L%u: can't pint, stack empty\n", line);
+		fprintf(stderr, "L%u: can't pint, stack empty\n", count);
 		fclose(bus.file);
-		free(bus.content);
+		free(bus.cnt);
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}

@@ -1,11 +1,11 @@
-#include "monty.h"
+#include "main.h"
 /**
- * f_swap - adds the top two elements of the stack.
+ * fq_swap - adds the top two elements of the stack.
  * @head: stack head
- * @line: line_number
+ * @count: line_number
  * Return: no return
- */
-void f_swap(stack_t **head, unsigned int line)
+*/
+void fq_swap(stack_t **head, unsigned int count)
 {
 	stack_t *h;
 	int len = 0, aux;
@@ -18,9 +18,9 @@ void f_swap(stack_t **head, unsigned int line)
 	}
 	if (len < 2)
 	{
-		fprintf(stderr, "L%d: can't swap, stack too short\n", line);
+		fprintf(stderr, "L%d: can't swap, stack too short\n", count);
 		fclose(bus.file);
-		free(bus.content);
+		free(bus.cnt);
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}

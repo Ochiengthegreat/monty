@@ -1,6 +1,6 @@
-#ifndef MONTY_H
-#define MONTY_H
-#define _POSIX_C_SOURCE 200809L
+#ifndef _MAIN_H_
+#define _MAIN_H_
+/* System Libraries */
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
@@ -15,6 +15,7 @@
  * @next: points to the next element of the stack (or queue)
  *
  * Description: doubly linked list node structure
+ * for stack, queues, LIFO, FIFO Holberton project
  */
 typedef struct stack_s
 {
@@ -23,10 +24,10 @@ typedef struct stack_s
 	struct stack_s *next;
 } stack_t;
 /**
- * struct bus_s - variables -args, file, line content
+ * struct bus_s - variables -args, file, line cnt
  * @arg: value
  * @file: pointer to monty file
- * @content: line content
+ * @cnt: line cnt
  * @lifi: flag change stack <-> queue
  * Description: carries values through the program
  */
@@ -34,7 +35,7 @@ typedef struct bus_s
 {
 	char *arg;
 	FILE *file;
-	char *content;
+	char *cnt;
 	int lifi;
 }  bus_t;
 extern bus_t bus;
@@ -44,6 +45,7 @@ extern bus_t bus;
  * @f: function to handle the opcode
  *
  * Description: opcode and its function
+ * for stack, queues, LIFO, FIFO Holberton project
  */
 typedef struct instruction_s
 {
@@ -52,26 +54,26 @@ typedef struct instruction_s
 } instruction_t;
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
-char  *clean_line(char *content);
-void f_push(stack_t **head, unsigned int line);
-void f_pall(stack_t **head, unsigned int line);
-void f_pint(stack_t **head, unsigned int line);
-int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
+char  *clean_line(char *cnt);
+void fq_push(stack_t **head, unsigned int number);
+void fq_pall(stack_t **head, unsigned int number);
+void fq_pint(stack_t **head, unsigned int number);
+int execute(char *cnt, stack_t **head, unsigned int count, FILE *file);
 void free_stack(stack_t *head);
-void f_pop(stack_t **head, unsigned int line);
-void f_swap(stack_t **head, unsigned int line);
-void f_add(stack_t **head, unsigned int line);
-void f_nop(stack_t **head, unsigned int line);
-void f_sub(stack_t **head, unsigned int counter);
-void f_div(stack_t **head, unsigned int counter);
-void f_mul(stack_t **head, unsigned int counter);
-void f_mod(stack_t **head, unsigned int counter);
-void f_pchar(stack_t **head, unsigned int counter);
-void f_pstr(stack_t **head, unsigned int counter);
-void f_rotl(stack_t **head, unsigned int counter);
-void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
+void fq_pop(stack_t **head, unsigned int count);
+void fq_swap(stack_t **head, unsigned int count);
+void fq_add(stack_t **head, unsigned int count);
+void fq_nop(stack_t **head, unsigned int count);
+void fq_sub(stack_t **head, unsigned int count);
+void fq_div(stack_t **head, unsigned int count);
+void fq_mul(stack_t **head, unsigned int count);
+void fq_mod(stack_t **head, unsigned int count);
+void fq_pchar(stack_t **head, unsigned int count);
+void fq_pstr(stack_t **head, unsigned int count);
+void fq_rotl(stack_t **head, unsigned int count);
+void fq_rotr(stack_t **head, __attribute__((unused)) unsigned int count);
 void addnode(stack_t **head, int n);
 void addqueue(stack_t **head, int n);
-void f_queue(stack_t **head, unsigned int counter);
-void f_stack(stack_t **head, unsigned int counter);
-#endif
+void fq_queue(stack_t **head, unsigned int count);
+void fq_stack(stack_t **head, unsigned int count);
+#endif /* _MAIN_H_ */
