@@ -46,12 +46,12 @@ extern stack_t *head;
 typedef void (*op_func)(stack_t **, unsigned int);
 
 /*file operations*/
-void open_file(char *file_name);
+void fq_open(char *file_name);
 
 int parse_line(char *buffer, int line_number, int format);
 
-void read_file(FILE *);
-int len_chars(FILE *);
+void fq_read(FILE *);
+int fq_len(FILE *);
 void find_func(char *, char *, int, int);
 
 /*Stack operations*/
@@ -70,32 +70,32 @@ void print_top(stack_t **, unsigned int);
 
 void pop_top(stack_t **, unsigned int);
 
-void nop(stack_t **, unsigned int);
+void fq_nop(stack_t **, unsigned int);
 
 void swap_nodes(stack_t **, unsigned int);
 
 /*Math operations with nodes*/
-void add_nodes(stack_t **, unsigned int);
+void fq_add(stack_t **, unsigned int);
 
-void sub_nodes(stack_t **, unsigned int);
+void fq_sub(stack_t **, unsigned int);
 
-void div_nodes(stack_t **, unsigned int);
+void fq_divide(stack_t **, unsigned int);
 
-void mul_nodes(stack_t **, unsigned int);
+void fq_mul(stack_t **, unsigned int);
 
-void mod_nodes(stack_t **, unsigned int);
+void fq_mod(stack_t **, unsigned int);
 
 /*String operations*/
 void print_char(stack_t **, unsigned int);
 
 void print_str(stack_t **, unsigned int);
 
-void rotl(stack_t **, unsigned int);
+void rotate_l(stack_t **, unsigned int);
 
 /*Error hanlding*/
 void err(int error_code, ...);
 
-void more_err(int error_code, ...);
+void error_def(int error_code, ...);
 
 void string_err(int error_code, ...);
 
