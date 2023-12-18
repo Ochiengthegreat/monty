@@ -1,30 +1,30 @@
 #include "monty.h"
 
 /**
- * open_file - opens a file
+ * fq_open - opens the file
  * @file_name: the file namepath
  * Return: void
  */
 
-void open_file(char *file_name)
+void fq_open(char *file_name)
 {
 	FILE *fd = fopen(file_name, "r");
 
 	if (file_name == NULL || fd == NULL)
 		err(2, file_name);
 
-	read_file(fd);
+	fq_read(fd);
 	fclose(fd);
 }
 
 
 /**
- * read_file - reads a file
+ * fq_read - reads a file
  * @fd: pointer to file descriptor
  * Return: void
  */
 
-void read_file(FILE *fd)
+void fq_read(FILE *fd)
 {
 	int line_number, format = 0;
 	char *buffer = NULL;
@@ -89,16 +89,16 @@ void find_func(char *opcode, char *value, int ln, int format)
 		{"pall", print_stack},
 		{"pint", print_top},
 		{"pop", pop_top},
-		{"nop", nop},
+		{"fq_nop", fq_nop},
 		{"swap", swap_nodes},
-		{"add", add_nodes},
-		{"sub", sub_nodes},
-		{"div", div_nodes},
-		{"mul", mul_nodes},
-		{"mod", mod_nodes},
+		{"add", fq_add},
+		{"sub", fq_sub},
+		{"div", fq_divide},
+		{"mul", fq_mul},
+		{"mod", fq_mod},
 		{"pchar", print_char},
 		{"pstr", print_str},
-		{"rotl", rotl},
+		{"rotate_l", rotate_l},
 		{"rotr", rotr},
 		{NULL, NULL}
 	};
