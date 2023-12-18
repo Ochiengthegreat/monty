@@ -47,14 +47,14 @@ void err(int error_code, ...)
 }
 
 /**
- * more_err - handles errors.
+ * error_def - handles errors.
  * @error_code: The error codes are the following:
  * (6) => When the stack it empty for pint.
  * (7) => When the stack it empty for pop.
  * (8) => When stack is too short for operation.
  * (9) => Division by zero.
  */
-void more_err(int error_code, ...)
+void error_def(int error_code, ...)
 {
 	va_list ag;
 	char *op;
