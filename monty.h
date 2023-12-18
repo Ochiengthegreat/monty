@@ -1,5 +1,5 @@
-#ifndef _MAIN_H_
-#define _MAIN_H_
+#ifndef _MONTY_H_
+#define _MONTY_H_
 /* System Libraries */
 #include <stdio.h>
 #include <stdlib.h>
@@ -76,4 +76,4 @@ void addnode(stack_t **head, int n);
 void addqueue(stack_t **head, int n);
 void fq_queue(stack_t **head, unsigned int count);
 void fq_stack(stack_t **head, unsigned int count);
-#endif /* _MAIN_H_ */
+#endif /* _MONTY_H_ */

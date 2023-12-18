@@ -1,12 +1,12 @@
-#include "main.h"
+#include "monty.h"
 bus_t bus = {NULL, NULL, NULL, 0};
 /**
- * main - monty interpreter
+ * monty - monty interpreter
  * @argc: no of arguments
  * @argv: monty file location
  * Return: 0(Success)
  */
-int main(int argc, char *argv[])
+int monty(int argc, char *argv[])
 {
 	char *cnt;
 	FILE *file;
@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		fprintf(stderr, "USAGE: main file\n");
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	file = fopen(argv[1], "r");
