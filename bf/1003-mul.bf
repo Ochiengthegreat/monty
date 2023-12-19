@@ -1,4 +1,4 @@
-read from stdin
+read from standard input
 >, >, <<
 convert atoi
 +++++ +
